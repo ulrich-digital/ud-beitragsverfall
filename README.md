@@ -1,28 +1,56 @@
-# Beitragsverfall Block (WordPress Plugin)
+# 🗓 Beitragsverfall (WordPress Plugin)
 
-**Erweiterung für den WordPress-Editor zur Steuerung von Beitragsgültigkeit.**  
-Mit diesem Plugin lässt sich im Block-Editor einstellen, ab wann ein Beitrag als „verfallen“ gilt – etwa für zeitlich begrenzte Informationen, Kampagnen oder Hinweise.
+Ein WordPress-Plugin, das Beiträge, Seiten und Custom Post Types nach einem festgelegten Verfallsdatum automatisch als **„abgelaufen“** markiert.
+
+Ideal für zeitlich begrenzte Inhalte wie Veranstaltungen, Aktionen, Hinweise oder Kampagnen.
+
 
 ## Was macht das Plugin?
 
-Das Plugin fügt dem Editor ein Eingabefeld für ein Ablaufdatum hinzu. Nach diesem Zeitpunkt wird der Beitrag **automatisch auf "Entwurf" gesetzt**.  
-Das ist ideal für Inhalte mit Ablaufdatum – zum Beispiel Aktionen, Veranstaltungen oder temporäre Hinweise.
+- Fügt allen öffentlichen Inhaltstypen ein Feld für ein **Verfallsdatum (Datum & Uhrzeit)** hinzu
+- Setzt den Beitrag nach Ablauf automatisch in den Status **„abgelaufen“** (`expired`)
+- Verhindert die Anzeige abgelaufener Beiträge im Frontend (für nicht eingeloggte Nutzer)
+- Zeigt abgelaufene Beiträge im Backend separat an – mit eigenem Statusfilter
+- Bietet eine Admin-Oberfläche mit Anzeige des Cron-Intervalls und einem **Testmodus**
 
-Die Funktion steht für **normale Beiträge (Posts)** ebenso wie für **Custom Post Types (CPTs)** zur Verfügung.
+
 
 ## Funktionen im Überblick
 
-- Steuerung von Gültigkeit / Verfall direkt im Editor
-- Auswahl eines konkreten Datums (optional mit Uhrzeit)
-- Automatisches Zurücksetzen des Beitrags auf „Entwurf“ nach Ablauf
-- Funktioniert mit Beiträgen und Custom Post Types
-- Keine externe Konfiguration notwendig
+- ✅ Eingabefeld für Verfallsdatum in Beitrag, Seite und CPT
+- ✅ Eigener Post-Status: **„abgelaufen“** (statt z. B. „Entwurf“)
+- ✅ Automatische Prüfung per WP-Cron
+- ✅ Testmodus mit verkürztem Cron-Intervall (alle 5 Minuten)
+- ✅ Frontend-Schutz für abgelaufene Beiträge
+- ✅ Übersichtliche Darstellung im Backend
+- ✅ Unterstützung für lokale Docker-Umgebungen
 
-## Vorschau im Editor
+
+## Zeitsteuerung (WP-Cron)
+
+| Modus         | Cron-Intervall | Zweck                |
+|---------------|----------------|----------------------|
+| **Live-Modus** | 1x pro Stunde   | Standardbetrieb      |
+| **Testmodus**  | alle 5 Minuten | Für Entwicklungszwecke |
+
+> 🐳 In Docker-Umgebungen wird `localhost` intern automatisch durch `host.docker.internal` ersetzt, damit WP-Cron korrekt funktioniert.
+
+
+
+
+
+
+## Verfallsdatum im Editor
 
 ![Beitragsverfall Editor](./assets/beitragsverfall_editor.png)
 
-*Abbildung: Eingabefeld im Editor zur Festlegung eines Ablaufdatums für den Beitrag.*
+*Abbildung: Das Eingabefeld für das Verfallsdatum erscheint in der Seitenleiste des Editors – für Beiträge, Seiten und CPTs.*
+
+## Einstellungsseite für Cron & Testmodus
+
+![Beitragsverfall Editor](./assets/verfallsdatum_settings.png)
+
+*Abbildung: Im Adminbereich lässt sich der Testmodus aktivieren und das aktive Cron-Intervall einsehen.*
 
 ## Installation
 
