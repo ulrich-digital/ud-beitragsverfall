@@ -34,6 +34,7 @@ Unter **„Einstellungen → Beitragsverfall“** findest du:
 * Einen Schalter zur Aktivierung des **Testmodus** (Cron alle 5 Minuten)
 
 ---
+![Beitragsverfall Editor](./assets/settings.png)
 
 ## Vorschau im Editor
 
