@@ -1,8 +1,8 @@
 <?php
 /**
  * Plugin Name: Beitragsverfall
- * Description: Setzt Beiträge, Seiten und CPTs nach Ablauf eines festgelegten Verfallsdatums automatisch auf den Status "Abgelaufen". 
- * Version: 1.1.0
+ * Description: Setzt Beiträge, Seiten und CPTs nach Ablauf eines festgelegten Verfallsdatums automatisch auf den Status "Abgelaufen". Die aktivierten Beitragstypen und der Prüfintervall lassen sich in den Einstellungen anpassen.
+ * Version: 1.2.0
  * Author: ulrich.digital
  * Author URI: https://ulrich.digital/
  * Text Domain: beitragsverfall
