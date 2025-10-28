@@ -63,3 +63,11 @@ Unter **„Einstellungen → Beitragsverfall“** findest du:
 | `includes/cron.php`             | Automatische Ablaufprüfung & Cronjob-Planung        |
 | `includes/settings.php`         | Einstellungsseite mit Testmodus & Post-Type-Auswahl |
 | `includes/helpers.php`          | Zeitzonen- & Intervall-Hilfsfunktionen              |
+
+<!--
+Interne Verwendung:
+Eingesetzt in den Projekten
+- illgau.ch
+- schule.illgau.ch
+- bbzg.ch
+-->
