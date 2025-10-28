@@ -6,14 +6,19 @@
 
 defined('ABSPATH') || exit;
 
-// Intervall "alle 5 Minuten" registrieren
+// Eigene Intervalle registrieren
 add_filter('cron_schedules', function($schedules) {
     $schedules['every_five_minutes'] = [
         'interval' => 300,
         'display'  => __('Alle 5 Minuten')
     ];
+    $schedules['every_minute'] = [
+        'interval' => 60,
+        'display'  => __('Jede Minute')
+    ];
     return $schedules;
 });
+
 
 // Aktivierung
 register_activation_hook(__FILE__, function () {
@@ -35,9 +40,10 @@ function beitragsverfall_reschedule_cron() {
         wp_unschedule_event($timestamp, 'beitragsverfall_cron_hook');
     }
 
-    $interval = get_option('beitragsverfall_testmode') ? 'every_five_minutes' : 'hourly';
+    $interval = get_option('beitragsverfall_testmode') ? 'every_minute' : 'every_five_minutes';
     wp_schedule_event(time(), $interval, 'beitragsverfall_cron_hook');
 }
+
 
 // Ablaufprüfung
 add_action('beitragsverfall_cron_hook', function () {
